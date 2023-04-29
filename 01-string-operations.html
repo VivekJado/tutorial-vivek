@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>String Operations</h1>
-</body>
+
+    <div>
+      <h3>Reading and printing string</h3>
+      <label for="textbox">Name : </label>
+      <input type="text" name="inputName" id="name" />
+      <input type="button" value="Read Name" onclick="readName()" />
+      <div id="nameResult"></div>
+    </div>
+
+    <script>
+      function readName() {
+        let name = document.querySelector("#name").value;
+
+        // console.log(name);
+        printName(name);
+      }
+
+      function printName(name) {
+        let container = document.querySelector("#nameResult");
+
+        for (let index = 0; index < name.length; index++) {
+          const element = name[index];
+          let para = document.createElement("p");     
+          para.innerText = element;
+          container.appendChild(para);
+        }
+      }
+
+     
+     
+    </script>
+  </body>
 </html>
