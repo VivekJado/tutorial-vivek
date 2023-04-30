@@ -17,15 +17,31 @@
       <div id="nameResult"></div>
     </div>
     <div class="sample2">
-    <h2>Sample2</h2>
-    <label for="Mr/Mrs">Salutation</label>
-    <input type="text" name="" id="Mr/Mrs" /><br />
-    <label for="firstName">First Name</label>
-    <input type="text" name="" id="firstName" /><br />
-    <label for="lastName">Last Name</label>
-    <input type="text" name="" id="lastName" /><br />
-    <input type="button" value="Great Person" onclick="greatPerson()" />
-    <div id="sample2rResult"></div>
+      <h2>Sample2</h2>
+      <label for="Mr/Mrs">Salutation</label>
+      <input type="text" name="" id="Mr/Mrs" /><br />
+      <label for="firstName">First Name</label>
+      <input type="text" name="" id="firstName" /><br />
+      <label for="lastName">Last Name</label>
+      <input type="text" name="" id="lastName" /><br />
+      <input type="button" value="Great Person" onclick="greatPerson()" />
+      <div id="sample2rResult"></div>
+    </div>
+
+    <div id="sample3"></div>
+
+    <div id="sample4">
+      <h2>Search string and show in browser</h2>
+      <label for="">Enter a string :</label>
+      <input type="text" name="" id="readString" /><br />
+      <label for="">Search Char :</label>
+      <input type="text" name="" id="searchchar" /><br />
+      <input
+        type="button"
+        value="Search Character"
+        onclick="searchCharacterIn()"
+      />
+      <div id="searchString"></div>
     </div>
 
     <script>
@@ -45,14 +61,58 @@
         }
       }
       //#endregion
+
       //#region sample2
       function greatPerson() {
         let input1 = document.getElementById("Mr/Mrs").value;
         let firstname = document.getElementById("firstName").value;
         let lastname = document.getElementById("lastName").value;
-        let name ="Hello !" +"&nbsp;" + input1 + "&nbsp;" + firstname + "&nbsp;" +lastname;
+        let name =
+          "Hello !" +
+          "&nbsp;" +
+          input1 +
+          "&nbsp;" +
+          firstname +
+          "&nbsp;" +
+          lastname;
         document.getElementById("sample2rResult").innerHTML = name;
       }
+      //#endregion
+
+      //#region search in string
+      // let charFound = false;
+      // let string1 = "How are you?";
+      // function searchCharacter(char){
+      //   for (let index = 0; index < string1.length; index++) {
+      //     const element = string1[index];
+      //     if(element===char){
+      //       charFound === true;
+      //       console.log(`${char} is at position ${index + 1}`);
+      //       break;
+      //     }
+
+      //   }
+      //   if(charFound == false){
+      //       console.log(`${char} is out of given string`);
+      //   }
+      // }
+      // searchCharacter('z');
+      //#endregion
+
+      //#region search in string using input field
+      function searchCharacterIn() {
+        let stringIn = document.querySelector("#readString").value;
+        let searchC = document.querySelector("#searchchar").value;
+        for (let index = 0; index < stringIn.length; index++) {
+          const element = stringIn[index];
+          if (element === searchC) {
+            let container = (`${searchC} is at position ${index + 1} `);
+            document.querySelector("#searchString").innerText += container;
+            break;
+          }
+        }
+      }
+
       //#endregion
     </script>
   </body>
