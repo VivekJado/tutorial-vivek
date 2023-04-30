@@ -9,35 +9,51 @@
   <body>
     <h1>String Operations</h1>
 
-    <div>
-      <h3>Reading and printing string</h3>
+    <div class="sample1">
+      <h2>Reading and printing string</h2>
       <label for="textbox">Name : </label>
       <input type="text" name="inputName" id="name" />
       <input type="button" value="Read Name" onclick="readName()" />
       <div id="nameResult"></div>
     </div>
+    <div class="sample2">
+    <h2>Sample2</h2>
+    <label for="Mr/Mrs">Salutation</label>
+    <input type="text" name="" id="Mr/Mrs" /><br />
+    <label for="firstName">First Name</label>
+    <input type="text" name="" id="firstName" /><br />
+    <label for="lastName">Last Name</label>
+    <input type="text" name="" id="lastName" /><br />
+    <input type="button" value="Great Person" onclick="greatPerson()" />
+    <div id="sample2rResult"></div>
+    </div>
 
     <script>
+      //#region sample1
       function readName() {
         let name = document.querySelector("#name").value;
-
-        // console.log(name);
         printName(name);
       }
-
       function printName(name) {
         let container = document.querySelector("#nameResult");
 
         for (let index = 0; index < name.length; index++) {
           const element = name[index];
-          let para = document.createElement("p");     
+          let para = document.createElement("p");
           para.innerText = element;
           container.appendChild(para);
         }
       }
-
-     
-     
+      //#endregion
+      //#region sample2
+      function greatPerson() {
+        let input1 = document.getElementById("Mr/Mrs").value;
+        let firstname = document.getElementById("firstName").value;
+        let lastname = document.getElementById("lastName").value;
+        let name ="Hello !" +"&nbsp;" + input1 + "&nbsp;" + firstname + "&nbsp;" +lastname;
+        document.getElementById("sample2rResult").innerHTML = name;
+      }
+      //#endregion
     </script>
   </body>
 </html>
