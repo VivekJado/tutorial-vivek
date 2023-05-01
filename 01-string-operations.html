@@ -42,6 +42,29 @@
         onclick="searchCharacterIn()"
       />
       <div id="searchString"></div>
+
+      <div id="sample5"></div>
+      <div id="sample6">
+        <h3>Count the character in a string</h3>
+        <label for="">String</label>
+        <input type="text" name="" id="stringToCount" /><br />
+        <label for="">Character</label>
+        <input type="text" name="" id="countChar" /><br />
+        <input
+          type="button"
+          value="Count Character"
+          onclick="countCharacter()"
+        />
+        <div class="container"></div>
+      </div>
+
+
+      <div class="sample7">
+        <label for="">String</label>
+        <input type="text" name="" id="stringToReverse">
+        <input type="button" value="Reverse String" onclick="reverseString()">
+        <div class="container1"></div>
+      </div>
     </div>
 
     <script>
@@ -63,20 +86,20 @@
       //#endregion
 
       //#region sample2
-      function greatPerson() {
-        let input1 = document.getElementById("Mr/Mrs").value;
-        let firstname = document.getElementById("firstName").value;
-        let lastname = document.getElementById("lastName").value;
-        let name =
-          "Hello !" +
-          "&nbsp;" +
-          input1 +
-          "&nbsp;" +
-          firstname +
-          "&nbsp;" +
-          lastname;
-        document.getElementById("sample2rResult").innerHTML = name;
-      }
+      // function greatPerson() {
+      //   let input1 = document.getElementById("Mr/Mrs").value;
+      //   let firstname = document.getElementById("firstName").value;
+      //   let lastname = document.getElementById("lastName").value;
+      //   let name =
+      //     "Hello !" +
+      //     "&nbsp;" +
+      //     input1 +
+      //     "&nbsp;" +
+      //     firstname +
+      //     "&nbsp;" +
+      //     lastname;
+      //   document.getElementById("sample2rResult").innerHTML = name;
+      // }
       //#endregion
 
       //#region search in string
@@ -100,20 +123,80 @@
       //#endregion
 
       //#region search in string using input field
-      function searchCharacterIn() {
-        let stringIn = document.querySelector("#readString").value;
-        let searchC = document.querySelector("#searchchar").value;
-        for (let index = 0; index < stringIn.length; index++) {
-          const element = stringIn[index];
-          if (element === searchC) {
-            let container = (`${searchC} is at position ${index + 1} `);
-            document.querySelector("#searchString").innerText += container;
-            break;
-          }
-        }
-      }
+      // function searchCharacterIn() {
+      //   let stringIn = document.querySelector("#readString").value;
+      //   let searchC = document.querySelector("#searchchar").value;
+      //   for (let index = 0; index < stringIn.length; index++) {
+      //     const element = stringIn[index];
+      //     if (element === searchC) {
+      //       let container = (`${searchC} is at position ${index + 1} `);
+      //       document.querySelector("#searchString").innerText += container;
+      //       break;
+      //     }
+      //   }
+      // }
 
       //#endregion
+
+      //#region count character in a string
+      // let result =0;
+      // let string1 = "hi how are you";
+      // let countChar = "h";
+      // function countCharacter(stringToRead,charToCount){
+
+      //   for (let index = 0; index < string1.length; index++) {
+      //     const element = string1[index];
+      //     if(element===charToCount){
+      //       result++;
+
+      //     }
+      //   }
+      //   console.log(`${charToCount} is ${result} times in given string `);
+      // }
+      // countCharacter(string1,countChar);
+      //#endregion
+
+      //#region count character in a string and show in browser
+
+      // function countCharacter() {
+      //   let string1 = document.querySelector("#stringToCount").value;
+      //   let countChar = document.querySelector("#countChar").value;
+      //   let result = 0;
+
+      //   for (let index = 0; index < string1.length; index++) {
+      //     const element = string1[index];
+      //     if (element === countChar) {
+      //       result++;
+      //     }
+      //   }
+      //   let div1 = document.querySelector(".container");
+      //   let para = document.createElement("p");
+      //   para.innerText = `${countChar} is ${result} times in given string `;
+      //   div1.appendChild(para);
+      // }
+      //#endregion
+      //#region
+      let  reversestr = "";
+        function reverseString(){
+          let string1 = document.querySelector("#stringToReverse").value;
+          for (let index = string1.length-1; index >= 0; index--) {
+            element = string1[index];
+            reversestr += element;
+          }
+          let cont1 = document.querySelector(".container1");
+            let para1 = document.createElement("p");
+            para1.innerText = reversestr;
+            cont1.appendChild(para1);
+        }
+      //#endregion take input a string and find even odd
+
+
+        //#region
+        
+
+
+        //#endregion
+
     </script>
   </body>
 </html>

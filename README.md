@@ -16,6 +16,12 @@ this will create a new branch
 ### git checkout -b branch-name
 shortcut to create a new branch
 
+### git branch -m new-branch-name
+this will rename the branch
+
+### git branch -d branch-name
+this will delete the branch
+
 ### git branch
 this will show all the branches
 * means current branch
@@ -23,21 +29,25 @@ this will show all the branches
 ### git status
 this will show the current branch
 
-
 ### git add (file-path)
+this will add one file
 
 ### git add .
+this will add all modified files at once
 
 ### git commit -m "description message "
+this will commit all the modified files
 
 ### git commit --amend -m "description message"
+this will change the last commit message
 
 ### git log
+this will show all the previous commits
 
 ### clear
+clear all the previous command in terminal
 
 ###  git push
-
 if branch is not on server this command will not executed and give you a command
 
 
@@ -46,6 +56,20 @@ if branch is not on server this command will not executed and give you a command
 
 
 
-### shortcuts
+## shortcuts
+
+
+## VS code
+
+### ctrl + f
+find the code
+
+### ctrl + backtics
+open terminal
+
+### f2
+find an element ,rename
+
+
 
 
