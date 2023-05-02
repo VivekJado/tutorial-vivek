@@ -29,7 +29,6 @@
     </div>
 
     <div id="sample3"></div>
-
     <div id="sample4">
       <h2>Search string and show in browser</h2>
       <label for="">Enter a string :</label>
@@ -42,47 +41,49 @@
         onclick="searchCharacterIn()"
       />
       <div id="searchString"></div>
+    </div>
 
-      <div id="sample5"></div>
-      <div id="sample6">
-        <h3>Count the character in a string</h3>
-        <label for="">String</label>
-        <input type="text" name="" id="stringToCount" /><br />
-        <label for="">Character</label>
-        <input type="text" name="" id="countChar" /><br />
-        <input
-          type="button"
-          value="Count Character"
-          onclick="countCharacter()"
-        />
-        <div class="container"></div>
-      </div>
+    <div id="sample5"></div>
+    <div id="sample6">
+      <h3>Count the character in a string</h3>
+      <label for="">String</label>
+      <input type="text" name="" id="stringToCount" /><br />
+      <label for="">Character</label>
+      <input type="text" name="" id="countChar" /><br />
+      <input type="button" value="Count Character" onclick="countCharacter()" />
+      <div class="container"></div>
+    </div>
 
+    <div class="sample7">
+      <label for="">String</label>
+      <input type="text" name="" id="stringToReverse" />
+      <input type="button" value="Reverse String" onclick="reverseString()" />
+      <div class="container1"></div>
+    </div>
 
-      <div class="sample7">
-        <label for="">String</label>
-        <input type="text" name="" id="stringToReverse">
-        <input type="button" value="Reverse String" onclick="reverseString()">
-        <div class="container1"></div>
-      </div>
+    <div id="sample8">
+      <label for="">String :</label>
+      <input type="text" name="" id="inputString" />
+      <input type="button" value="Print" onclick="findEvenOdd()" />
+      <div id="evenOddResult"></div>
     </div>
 
     <script>
       //#region sample1
-      function readName() {
-        let name = document.querySelector("#name").value;
-        printName(name);
-      }
-      function printName(name) {
-        let container = document.querySelector("#nameResult");
+      // function readName() {
+      //   let name = document.querySelector("#name").value;
+      //   printName(name);
+      // }
+      // function printName(name) {
+      //   let container = document.querySelector("#nameResult");
 
-        for (let index = 0; index < name.length; index++) {
-          const element = name[index];
-          let para = document.createElement("p");
-          para.innerText = element;
-          container.appendChild(para);
-        }
-      }
+      //   for (let index = 0; index < name.length; index++) {
+      //     const element = name[index];
+      //     let para = document.createElement("p");
+      //     para.innerText = element;
+      //     container.appendChild(para);
+      //   }
+      // }
       //#endregion
 
       //#region sample2
@@ -175,6 +176,7 @@
       //   div1.appendChild(para);
       // }
       //#endregion
+
       //#region
       // let  reversestr = "";
       //   function reverseString(){
@@ -190,9 +192,33 @@
       //   }
       //#endregion take input a string and find even odd
 
+      //#region
+      function findEvenOdd(){
+          let even ="";
+          let odd ="";
+          let takeString = document.querySelector("#inputString").value;
+          for (let index = 0; index < takeString.length; index++) {
+            const element = takeString[index];
+            // console.log(element);
+            if((index+1)%2==0){
+              even += element; 
+            }
+            if((index+1)%2!==0){
+              odd +=element;
+            }
+            
+          }
+          let container = document.querySelector("#evenOddResult");
+          let para = document.createElement("p");
+          let para1 = document.createElement("p");
+          para.innerText = "Even String is -  "+even;
+          para1.innerText = "odd String is -  "+odd;
+          container.appendChild(para);
+          container.appendChild(para1);
+        }
 
-      
 
+      //#endregion
     </script>
   </body>
 </html>
