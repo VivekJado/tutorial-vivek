@@ -58,11 +58,20 @@ if branch is not on server this command will not executed and give you a command
 
 ## shortcuts
 
+### cmd
+type cmd in file explorer this will open cmd at the same path
+
+### ctrl + shift + t
+this will open last close tab of chrome
+
 
 ## VS code
 
 ### ctrl + f
 find the code
+
+### ctrl + shift + v
+paste in terminal
 
 ### ctrl + backtics
 open terminal

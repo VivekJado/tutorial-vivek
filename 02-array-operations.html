@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Array operations</h2>
+    <fieldset>
+        <legend>Print An array with n element</legend>
+        <label for="">length of array</label>
+    <input type="text" name="" id="arrayLength">
+    <input type="button" value="Print Array" onclick="printArray()">
+    <div class="output"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Table</legend>
+        <label for="">number to print a table</label>
+        <input type="text" name="" id="numberToTable">
+        <input type="button" value="Print Table" onclick="printTable()">
+        <div class="result-container"></div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Creating HTML Element using javascript</legend>
+    </fieldset>
+
+
+    <script>
+
+//#region
+        // const array1 = [];
+        // function fillArray(len){
+        //     for (let index = 1; index <= len; index++) {
+        //         array1.push(index);
+        //     }
+        //     console.log(array1);
+        // }
+        // fillArray(5);
+//#endregion
+
+
+//#region
+
+// const array1 = [];
+// function printArray(){
+//     let len = document.querySelector("#arrayLength").value;
+//     for (let index = 1; index <= len; index++) {
+//         array1.push(index);
+//     }
+//     let container = document.querySelector(".output");
+//     let resultDiv = document.createElement("div");
+//     resultDiv.innerText = "Array is - " + array1;
+//     container.appendChild(resultDiv);
+// }
+//#endregion
+
+
+//#region
+
+function printTable(){
+    let container = document.querySelector(".result-container");
+    let tb = document.querySelector("#numberToTable").value;
+    let result;
+    for ( index = 1; index <= 10; index++) {
+        // console.log(`${tb} * ${index} = ${tb*index}`);
+        
+        let divRes = document.createElement("div");
+        divRes.innerText = `${tb} * ${index} = ${tb*index}`;
+        container.appendChild(divRes);
+        
+    }
+}
+
+
+//#endregion
+        
+
+    </script>
+</body>
+</html>

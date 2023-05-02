@@ -68,6 +68,11 @@
       <div id="evenOddResult"></div>
     </div>
 
+    <div id="sample9"></div>
+    <label for="">String </label>
+    <input type="text" name="" id="stringToPalindrome">
+    <input type="button" value="Check Palindrome" onclick="checkPalindrome()">
+    <div class="palindromeResult"></div>
     <script>
       //#region sample1
       // function readName() {
@@ -193,30 +198,61 @@
       //#endregion take input a string and find even odd
 
       //#region
-      function findEvenOdd(){
-          let even ="";
-          let odd ="";
-          let takeString = document.querySelector("#inputString").value;
-          for (let index = 0; index < takeString.length; index++) {
-            const element = takeString[index];
-            // console.log(element);
-            if((index+1)%2==0){
-              even += element; 
-            }
-            if((index+1)%2!==0){
-              odd +=element;
-            }
+      // function findEvenOdd(){
+      //     let even ="";
+      //     let odd ="";
+      //     let takeString = document.querySelector("#inputString").value;
+      //     for (let index = 0; index < takeString.length; index++) {
+      //       const element = takeString[index];
+      //       // console.log(element);
+      //       if((index+1)%2==0){
+      //         even += element; 
+      //       }
+      //       else{
+      //         odd +=element;
+      //       }
             
-          }
-          let container = document.querySelector("#evenOddResult");
-          let para = document.createElement("p");
-          let para1 = document.createElement("p");
-          para.innerText = "Even String is -  "+even;
-          para1.innerText = "odd String is -  "+odd;
+      //     }
+      //     let container = document.querySelector("#evenOddResult");
+      //     let para = document.createElement("p");
+      //     let para1 = document.createElement("p");
+      //     para.innerText = "Even String is -  "+even;
+      //     para1.innerText = "odd String is -  "+odd;
+      //     container.appendChild(para);
+      //     container.appendChild(para1);
+      //   }
+
+
+      //#endregion
+
+    //#region
+
+      function checkPalindrome(){
+        let reverseString ="";
+        let stringToCheck = document.querySelector("#stringToPalindrome").value;
+        console.log(stringToCheck);
+        for (let index = stringToCheck.length-1; index >= 0; index--) {
+          const element = stringToCheck[index];
+          reverseString += element;
+          
+          
+        }
+        console.log(reverseString);
+        let container = document.querySelector(".palindromeResult");
+        let para = document.createElement("p");
+        if(stringToCheck===reverseString){
+
+          para.innerText = "Palindrome : true";
           container.appendChild(para);
-          container.appendChild(para1);
+        }
+        else{
+          para.innerText = "Palindrome : false";
+          container.appendChild(para);
+
         }
 
+
+      }
 
       //#endregion
     </script>
