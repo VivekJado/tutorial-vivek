@@ -26,9 +26,16 @@
 
     <fieldset>
         <legend>Creating HTML Element using javascript</legend>
-
+        <div class="main-container"></div>
     </fieldset>
 
+
+    <fieldset>
+        <legend>Array Push method</legend>
+        <label for="">No. of element : </label>
+        <input type="text" name="" id="noOfElement">
+        <input type="button" value="Print Array" onclick="printArray()">
+    </fieldset>
 
     <script>
 
@@ -82,31 +89,40 @@
 
 
 //#region
-    let bd = document.querySelector("body");
-    let h2 = document.createElement("h2");
-    h2.innerText = "I have created all these element inside this fieldset using javascript (dynamically)";
-    bd.appendChild(h2);
-    let div1 = document.createElement("div");
-    let para1 = document.createElement("p");
-    let para2 = document.createElement("p");
-    let para3 = document.createElement("p");
-    let span1 = document.createElement("span");
-    let span2 = document.createElement("span");
-    para1.innerText = "Hello Everyone";
-    para2.innerText = "I am Vivek Jadon"
-    para3.innerText = "I am 20 years old";
-    span1.innerText = "This is all about me";
-    span2.innerText = "Thank you";
-    div1.appendChild(para1);
-    div1.appendChild(para2);
-    div1.appendChild(para3);
-    div1.appendChild(span1);
-    div1.appendChild(span2);
-    bd.appendChild(div1);
+    // let bd = document.querySelector(".main-container");
+    // let h2 = document.createElement("h2");
+    // h2.innerText = "I have created all these element inside this fieldset using javascript (dynamically)";
+    // bd.appendChild(h2);
+    // let div1 = document.createElement("div");
+    // let para1 = document.createElement("p");
+    // let para2 = document.createElement("p");
+    // let para3 = document.createElement("p");
+    // let span1 = document.createElement("span");
+    // let span2 = document.createElement("span");
+    // para1.innerText = "Hello Everyone";
+    // para2.innerText = "I am Vivek Jadon"
+    // para3.innerText = "I am 20 years old";
+    // span1.innerText = "This is all about me";
+    // span2.innerText = "Thank you";
+    // div1.appendChild(para1);
+    // div1.appendChild(para2);
+    // div1.appendChild(para3);
+    // div1.appendChild(span1);
+    // div1.appendChild(span2);
+    // bd.appendChild(div1);
 //#endregion
 
 
 //#region
+
+const array = [];
+function printArray(){
+    let n = document.querySelector("#noOfElement");
+    for (let i = 1; i <= ; i++) {
+    
+}
+}
+
 
 //#endregion
         
