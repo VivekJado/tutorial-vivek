@@ -7,7 +7,17 @@
     <title>Pattern printing</title>
   </head>
   <body>
+
+    <fieldset>
+      <legend>Octagon pattern</legend>
+      <label for="">Enter no of star on top (odd number) : </label>
+      <input type="text" name="" id="top">
+      <input type="button" value="Print Pattern" onclick="printPattern()">
+      <div class="octagon-container"></div>
+
+    </fieldset>
     <script>
+      //#region
       // let n = 5;
 
       // for (let row = 1; row <= 5; row++) {
@@ -30,6 +40,10 @@
       // }
       // }
 
+      //#endregion
+
+       //#region
+
       // for (let row1 = 1; row1 <= n; row1++) {
       //     for (let col1 = n; col1 >=1; col1--) {
       //         if(row1 + col1 < ){
@@ -43,10 +57,11 @@
       //     }
       //     document.write("<br>");
 
-
       // }
 
+       //#endregion
 
+       //#region
 
       // for (let row = 1; row <= 5; row++) {
       //     for (let col = 1; col <= 5; col++) {
@@ -60,7 +75,9 @@
       //     document.write("<br>");
       // }
 
+       //#endregion
 
+       //#region
 
       // for (let row = 1; row <= 5; row++) {
       //     for (let col = 1; col <= 5; col++) {
@@ -74,7 +91,10 @@
       //     document.write("<br>");
       // }
 
+       //#endregion
 
+
+       //#region
       // for (let row = 1; row <= 5; row++) {
       //     for (let col = 1; col <= 5; col++) {
       //         if(row + col ===6 || row === 1){
@@ -87,6 +107,9 @@
       //     document.write("<br>");
       // }
 
+       //#endregion
+
+       //#region
 
       // for (let row = 1; row <= 5; row++) {
       //     for (let col = 1; col <= 5; col++) {
@@ -100,7 +123,9 @@
       //     document.write("<br>");
       // }
 
+       //#endregion
 
+       //#region
 
       // for (let row = 1; row <= 5; row++) {
       //     for (let col = 1; col <= 5; col++) {
@@ -114,23 +139,84 @@
       //     document.write("<br>");
       // }
 
-          let min = 1;
-          let max = 7;
-          let center = 4;
-      for (let row = 1; row <= 7; row++) {
-          for (let col = 1; col <= 7; col++) {
-              if((row + col==4) || (row + col ===12) || (row - col ===4) || (col-row ===4) || ((row == min ||row == max) && (col == center)) || ((col == min ||col == max) && (row == center))){
+       //#endregion
+
+       //#region
+      //     let min = 1;
+      //     let max = 7;
+      //     let center = 4;
+      // for (let row = 1; row <= 7; row++) {
+      //     for (let col = 1; col <= 7; col++) {
+      //         if((row + col==4) || (row + col ===12) || (row - col ===4) || (col-row ===4) || ((row == min ||row == max) && (col == center)) || ((col == min ||col == max) && (row == center))){
+      //             document.write("*&nbsp;&nbsp;");
+
+      //         }
+      //         else{
+      //             document.write("&nbsp;&nbsp;&nbsp;&nbsp;")
+      //         }
+      //     }
+      //     document.write("<br>");
+      // }
+
+       //#endregion
+
+
+       //#region
+
+      // for (let i = 1; i <= 5; i++) {
+      //   for (let j = 1; j <= 9; j++) {
+      //     if ((i + j <6)|| (j-i >= 5)) {
+      //       document.write("&nbsp;&nbsp;");
+      //     } else {
+      //       document.write("*");
+      //     }
+      //   }
+      //   document.write("<br>");
+      // }
+
+      //#endregion
+    
+//#region
+
+function printPattern(){
+  
+  
+  let noOfStars = +document.querySelector("#top").value;
+  let min = 1;
+  let max = noOfStars*2+(noOfStars-2);
+  let center = (max+1)/2;
+  let leftUpperDiadonal = (noOfStars+1);
+  let leftLowerDiagonal = noOfStars + (noOfStars-2);
+  let rightUpperDiagonal = noOfStars + (noOfStars-2);
+  let rightLowerDiagonal = (noOfStars*4+(noOfStars-3))
+  let lowerRange = (max-noOfStars)/2 +2;
+  let upperRange = lowerRange + (noOfStars - 3);
+    let middle = (max-noOfStars)/2;
+      for (let row = 1; row <= max; row++) {
+          for (let col = 1; col <= max; col++) {
+              if((row + col == leftUpperDiadonal) || (row + col == rightLowerDiagonal) || (row - col ==leftLowerDiagonal) || (col-row ==rightUpperDiagonal || ((row == min ||row == max) && (col >= lowerRange &&  col<= upperRange )) || ((col == min ||col == max) && (row >= lowerRange && row <= upperRange)) )
+              
+               )
                   document.write("*&nbsp;&nbsp;");
-                 
-              }
+
               else{
                   document.write("&nbsp;&nbsp;&nbsp;&nbsp;")
               }
           }
           document.write("<br>");
       }
+    }
+
+       //#endregion
 
 
+
+      //#region
+     
+       //#endregion
+
+
+    
     </script>
   </body>
 </html>
