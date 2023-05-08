@@ -8,14 +8,17 @@
   </head>
   <body>
 
-    <fieldset>
+    <!-- <fieldset>
       <legend>Octagon pattern</legend>
       <label for="">Enter no of star on top (odd number) : </label>
       <input type="text" name="" id="top">
       <input type="button" value="Print Pattern" onclick="printPattern()">
       <div class="octagon-container"></div>
 
-    </fieldset>
+    </fieldset> -->
+
+
+     
     <script>
       //#region
       // let n = 5;
@@ -178,40 +181,56 @@
     
 //#region
 
-function printPattern(){
-  
-  
-  let noOfStars = +document.querySelector("#top").value;
-  let min = 1;
-  let max = noOfStars*2+(noOfStars-2);
-  let center = (max+1)/2;
-  let leftUpperDiadonal = (noOfStars+1);
-  let leftLowerDiagonal = noOfStars + (noOfStars-2);
-  let rightUpperDiagonal = noOfStars + (noOfStars-2);
-  let rightLowerDiagonal = (noOfStars*4+(noOfStars-3))
-  let lowerRange = (max-noOfStars)/2 +2;
-  let upperRange = lowerRange + (noOfStars - 3);
-    let middle = (max-noOfStars)/2;
-      for (let row = 1; row <= max; row++) {
-          for (let col = 1; col <= max; col++) {
-              if((row + col == leftUpperDiadonal) || (row + col == rightLowerDiagonal) || (row - col ==leftLowerDiagonal) || (col-row ==rightUpperDiagonal || ((row == min ||row == max) && (col >= lowerRange &&  col<= upperRange )) || ((col == min ||col == max) && (row >= lowerRange && row <= upperRange)) )
-              
-               )
-                  document.write("*&nbsp;&nbsp;");
-
-              else{
-                  document.write("&nbsp;&nbsp;&nbsp;&nbsp;")
-              }
-          }
-          document.write("<br>");
-      }
-    }
+// function printPattern(){
+//   let x ="";
+//   let noOfStars = +document.querySelector("#top").value;
+//   let min = 1;
+//   let max = noOfStars*2+(noOfStars-2);
+//   let center = (max+1)/2;
+//   let leftUpperDiadonal = (noOfStars+1);
+//   let leftLowerDiagonal = noOfStars + (noOfStars-2);
+//   let rightUpperDiagonal = noOfStars + (noOfStars-2);
+//   let rightLowerDiagonal = (noOfStars*4+(noOfStars-3))
+//   let lowerRange = (max-noOfStars)/2 +2;
+//   let upperRange = lowerRange + (noOfStars - 3);
+//   let middle = (max-noOfStars)/2;
+//   let div1 = document.querySelector(".octagon-container");
+//       for (let row = 1; row <= max; row++) {
+//           for (let col = 1; col <= max; col++) {
+//               if((row + col == leftUpperDiadonal) || (row + col == rightLowerDiagonal) || (row - col ==leftLowerDiagonal) || (col-row ==rightUpperDiagonal || ((row == min ||row == max) && (col >= lowerRange &&  col<= upperRange )) || ((col == min ||col == max) && (row >= lowerRange && row <= upperRange)))){
+//                 x += "*&nbsp;&nbsp;";
+//               }
+//               else{
+//                   x += "&nbsp;&nbsp;&nbsp;&nbsp;";
+//               }
+//           }
+//           let div2 = document.createElement("div");
+//           div2.innerHTML = x;
+//           div1.appendChild(div2);
+//           x = "\n";
+//         }
+//         console.log(x);
+//     }
 
        //#endregion
 
 
 
       //#region
+  let x = "";
+      for (let row = 1; row <= 5; row++) {
+        for (let col = 1; col <= 9; col++) {
+          if((row + col ==6) || (col - row ==4) || row == 5){
+            x += "*";
+          }
+          else{
+            x += " ";
+          }
+          
+        }
+        x += "\n";
+      }
+      console.log(x);
      
        //#endregion
 
